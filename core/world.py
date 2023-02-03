@@ -3,10 +3,12 @@ import pygame as pg
 
 
 class Object :
-	def __init__ (self, name, pos) :
-		self.img = pg.image.load(f'objects/{name}.png').convert_alpha()
+	def __init__ (self, name, pos, rot) :
+		self.img = pg.transform.rotate(pg.image.load(f'objects/{name}.png'), rot).convert_alpha()
 
 		self.pos = pos
+
+		self.rot = rot
 
 		self.name = name
 
